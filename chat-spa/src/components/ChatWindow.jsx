@@ -1,7 +1,7 @@
 import Message from "./Message";
 import ChatInput from "./ChatInput";
 
-const ChatWindow = ({ chats, currentUser }) => {
+const ChatWindow = ({ chats, currentUser, sendMessage }) => {
   const chatsList = chats.map((chat) => (
     <Message
       key={Date.now() * Math.random()}
@@ -31,7 +31,7 @@ const ChatWindow = ({ chats, currentUser }) => {
           {chatsList}
         </div>
         <div style={{}}>
-          <ChatInput />
+          <ChatInput sendMessage={sendMessage} />
         </div>
       </div>
     </>
