@@ -10,6 +10,7 @@ const ChatInput = ({ sendMessage }) => {
 
     if (isMessageProvided) {
       sendMessage(message);
+      setMessage("");
     } else {
       alert("Please provide user and a message");
     }
