@@ -9,17 +9,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
+// builder.Services.AddCors();
 
-builder.Services.AddCors(option =>
-{
-    option.AddPolicy("ClientPermission", policy =>
-    {
-        policy.AllowAnyHeader()
-            .AllowAnyMethod()
-            .WithOrigins("http://localhost:3000")
-            .AllowCredentials();
-    });
-});
+// builder.Services.AddCors(option =>
+// {
+//     option.AddPolicy("ClientPermission", policy =>
+//     {
+//         policy.AllowAnyHeader()
+//             .AllowAnyMethod()
+//             .AllowAnyOrigin()
+//             // .WithOrigins("https://salmon-moss-0e92ddd00.1.azurestaticapps.net")
+//             .AllowCredentials();
+//     });
+// });
 
 var app = builder.Build();
 
@@ -27,9 +29,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
 }
+
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseCors("ClientPermission");
+// app.UseCors("ClientPermission");
+// app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
