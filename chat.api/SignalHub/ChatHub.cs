@@ -11,7 +11,6 @@ namespace chat.api.SignalHub
     {
         public async Task SendMessage(MessageModel msg)
         {
-            System.Console.WriteLine("Message received in server");
             await Clients.All.SendAsync("ReceiveMessage", msg);
         }
     }

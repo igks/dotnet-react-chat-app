@@ -14,7 +14,7 @@ const Chat = () => {
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl("http://localhost:5286/hub/chat")
+      .withUrl("https://chat-api1.azurewebsites.net/hub/chat")
       .withAutomaticReconnect()
       .build();
 
