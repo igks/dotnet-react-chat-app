@@ -3,7 +3,7 @@ const Message = ({ currentUser, user, message }) => (
     {currentUser === user ? (
       <div
         style={{
-          background: "##5afad5",
+          backgroundColor: "#5afad5",
           borderRadius: "5px",
           padding: "1px 10px",
           marginBottom: "10px",
@@ -11,12 +11,13 @@ const Message = ({ currentUser, user, message }) => (
           float: "left",
         }}
       >
+        <small>You</small>
         <p>{message}</p>
       </div>
     ) : (
       <div
         style={{
-          background: "##cededa",
+          backgroundColor: "#cededa",
           borderRadius: "5px",
           padding: "1px 10px",
           marginBottom: "10px",
@@ -24,6 +25,7 @@ const Message = ({ currentUser, user, message }) => (
           float: "right",
         }}
       >
+        <small>{user}</small>
         <p>{message}</p>
       </div>
     )}
